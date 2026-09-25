@@ -24,7 +24,7 @@ export function LiveBasketPreview() {
         {/* Basket Hero Image */}
         <div className="relative w-full flex items-center justify-center my-2">
           <motion.img
-            src="/basket-hero.png"
+            src={`${import.meta.env.BASE_URL}basket-hero.png`}
             alt="Compare Quick Commerce Baskets across Blinkit, Zepto, and Instamart"
             className="relative z-10 w-full max-w-[340px] sm:max-w-[390px] h-auto object-contain drop-shadow-lg select-none"
             whileHover={{ scale: 1.02 }}
