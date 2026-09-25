@@ -1,6 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShoppingBasket, TrendingDown, Clock, ShieldCheck } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import {
+  ShoppingBasket01Icon,
+  TrendingDownIcon,
+  Clock01Icon,
+  ShieldCheckIcon,
+} from '@hugeicons/core-free-icons';
 
 export function LiveBasketPreview() {
   return (
@@ -17,7 +23,7 @@ export function LiveBasketPreview() {
 
         {/* Top Feature Pill */}
         <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-background border border-border text-xs font-semibold text-sub mb-2 shadow-sm">
-          <ShoppingBasket className="w-3.5 h-3.5 text-status-green" />
+          <HugeiconsIcon icon={ShoppingBasket01Icon} size={15} strokeWidth={1.5} className="text-status-green" />
           <span>Real-time Quick Commerce Comparison</span>
         </div>
 
@@ -35,19 +41,19 @@ export function LiveBasketPreview() {
         {/* Bottom Feature Badges */}
         <div className="grid grid-cols-3 gap-2 w-full pt-3.5 border-t border-border/80 text-xs">
           <div className="p-2 sm:p-2.5 rounded-2xl bg-card-inner border border-border/60 flex flex-col items-center">
-            <TrendingDown className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-status-green mb-0.5" />
+            <HugeiconsIcon icon={TrendingDownIcon} size={16} strokeWidth={2} className="text-status-green mb-0.5" />
             <span className="font-bold text-main text-[11px] sm:text-xs">Save ~₹45–₹180</span>
             <span className="text-[10px] text-sub">Per Basket</span>
           </div>
 
           <div className="p-2 sm:p-2.5 rounded-2xl bg-card-inner border border-border/60 flex flex-col items-center">
-            <Clock className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-amber-500 mb-0.5" />
+            <HugeiconsIcon icon={Clock01Icon} size={16} strokeWidth={1.5} className="text-amber-500 mb-0.5" />
             <span className="font-bold text-main text-[11px] sm:text-xs">8–15 Mins</span>
             <span className="text-[10px] text-sub">Fast Delivery</span>
           </div>
 
           <div className="p-2 sm:p-2.5 rounded-2xl bg-card-inner border border-border/60 flex flex-col items-center">
-            <ShieldCheck className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-blue-500 mb-0.5" />
+            <HugeiconsIcon icon={ShieldCheckIcon} size={16} strokeWidth={1.5} className="text-blue-500 mb-0.5" />
             <span className="font-bold text-main text-[11px] sm:text-xs">4 Top Stores</span>
             <span className="text-[10px] text-sub">Compared Live</span>
           </div>
@@ -56,3 +62,4 @@ export function LiveBasketPreview() {
     </motion.div>
   );
 }
+

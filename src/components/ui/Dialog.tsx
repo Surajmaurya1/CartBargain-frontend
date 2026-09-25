@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../../lib/utils';
-import { X } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Cancel01Icon } from '@hugeicons/core-free-icons';
 
 export interface DialogProps {
   isOpen: boolean;
@@ -98,7 +99,7 @@ export function Dialog({
                     className="text-sub hover:text-main rounded-full p-1.5 hover:bg-hover transition-all duration-150 ease-spring-gentle shrink-0 -mr-1"
                     aria-label="Close dialog"
                   >
-                    <X className="w-5 h-5" />
+                    <HugeiconsIcon icon={Cancel01Icon} size={20} strokeWidth={1.5} />
                   </button>
                 </div>
               )}

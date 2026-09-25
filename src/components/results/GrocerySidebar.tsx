@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import { useBasket } from '../../context/BasketContext';
-import { ArrowLeft, ShoppingBag, MapPin, Search, Store, Info, Plus, Trash2 } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import {
+  ArrowLeft01Icon,
+  ShoppingBag01Icon,
+  Location01Icon,
+  Search01Icon,
+  Store01Icon,
+  InformationCircleIcon,
+  PlusSignIcon,
+  Delete02Icon,
+} from '@hugeicons/core-free-icons';
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
 import { Input } from '../ui/Input';
@@ -45,7 +55,7 @@ export function GrocerySidebar() {
         variant="secondary"
         size="md"
         onClick={() => setCurrentScreen('home')}
-        leftIcon={<ArrowLeft className="w-3.5 h-3.5" />}
+        leftIcon={<HugeiconsIcon icon={ArrowLeft01Icon} size={15} strokeWidth={2} />}
         className="hidden lg:flex w-full justify-start text-xs px-4 h-10 rounded-2xl font-bold shadow-sm"
       >
         Back to Search
@@ -56,7 +66,7 @@ export function GrocerySidebar() {
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-border">
           <div className="flex items-center gap-2">
-            <ShoppingBag className="w-4 h-4 text-sub" />
+            <HugeiconsIcon icon={ShoppingBag01Icon} size={16} strokeWidth={1.5} className="text-sub" />
             <span className="text-sm font-bold text-main">Grocery List</span>
           </div>
           <Badge variant="neutral" size="sm">{items.length} items</Badge>
@@ -82,7 +92,7 @@ export function GrocerySidebar() {
                   className="opacity-0 group-hover:opacity-100 text-sub hover:text-red-400 transition-all p-1 rounded-lg"
                   aria-label={`Remove ${item.name}`}
                 >
-                  <Trash2 className="w-3.5 h-3.5" />
+                  <HugeiconsIcon icon={Delete02Icon} size={14} strokeWidth={1.5} />
                 </button>
               </div>
             </div>
@@ -128,7 +138,7 @@ export function GrocerySidebar() {
               onClick={() => setIsAddingItem(true)}
               className="w-full mt-2 py-2 text-xs font-medium text-sub hover:text-main hover:bg-card-item rounded-xl border border-dashed border-border flex items-center justify-center gap-1.5 transition-colors"
             >
-              <Plus className="w-3.5 h-3.5" /> Add item
+              <HugeiconsIcon icon={PlusSignIcon} size={14} strokeWidth={2} /> Add item
             </button>
           )}
         </div>
@@ -139,7 +149,7 @@ export function GrocerySidebar() {
         {/* Location */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-border">
           <div className="flex items-center gap-2.5 min-w-0">
-            <MapPin className="w-3.5 h-3.5 text-status-green shrink-0" />
+            <HugeiconsIcon icon={Location01Icon} size={16} strokeWidth={1.5} className="text-status-green shrink-0" />
             <div className="min-w-0">
               <div className="text-xs font-semibold text-sub">Delivery location</div>
               <div className="text-xs font-bold text-main truncate">
@@ -158,7 +168,7 @@ export function GrocerySidebar() {
         {/* Engine */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-border">
           <div className="flex items-center gap-2.5 min-w-0">
-            <Search className="w-3.5 h-3.5 text-sub shrink-0" />
+            <HugeiconsIcon icon={Search01Icon} size={16} strokeWidth={1.5} className="text-sub shrink-0" />
             <div className="min-w-0">
               <div className="text-xs font-semibold text-sub">Search source</div>
               <div className="text-xs font-bold text-main truncate">
@@ -177,7 +187,7 @@ export function GrocerySidebar() {
         {/* Providers */}
         <div className="flex items-center justify-between px-5 py-4">
           <div className="flex items-center gap-2.5 min-w-0">
-            <Store className="w-3.5 h-3.5 text-sub shrink-0" />
+            <HugeiconsIcon icon={Store01Icon} size={16} strokeWidth={1.5} className="text-sub shrink-0" />
             <div className="min-w-0">
               <div className="text-xs font-semibold text-sub">Active stores</div>
               <div className="text-xs font-bold text-main capitalize truncate">
@@ -196,9 +206,10 @@ export function GrocerySidebar() {
 
       {/* Info pill */}
       <div className="flex items-start gap-2.5 px-4 py-3.5 rounded-[18px] bg-card-inner border border-border text-xs text-sub">
-        <Info className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+        <HugeiconsIcon icon={InformationCircleIcon} size={15} strokeWidth={1.5} className="mt-0.5 shrink-0" />
         <p className="leading-relaxed">Searched across providers to get best prices and fees in your locality.</p>
       </div>
     </aside>
   );
 }
+

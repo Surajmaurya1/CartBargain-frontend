@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Calculator } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { ArrowDown01Icon, ArrowUp01Icon, CalculateIcon } from '@hugeicons/core-free-icons';
 import { OptimizationResult } from '../../types';
 
 interface WhyThisBasketProps {
@@ -17,13 +18,13 @@ export function WhyThisBasket({ result }: WhyThisBasketProps) {
         className="w-full px-4 py-3 flex items-center justify-between text-left hover:bg-card-item transition-colors"
       >
         <div className="flex items-center gap-2">
-          <Calculator className="w-3.5 h-3.5 text-sub" />
+          <HugeiconsIcon icon={CalculateIcon} size={15} strokeWidth={1.5} className="text-sub" />
           <span className="font-bold text-main text-xs">Why split this order?</span>
           <span className="text-[11px] text-sub">(Savings calculation)</span>
         </div>
         {isOpen
-          ? <ChevronUp className="w-3.5 h-3.5 text-sub" />
-          : <ChevronDown className="w-3.5 h-3.5 text-sub" />
+          ? <HugeiconsIcon icon={ArrowUp01Icon} size={14} strokeWidth={1.5} className="text-sub" />
+          : <HugeiconsIcon icon={ArrowDown01Icon} size={14} strokeWidth={1.5} className="text-sub" />
         }
       </button>
 
@@ -40,3 +41,4 @@ export function WhyThisBasket({ result }: WhyThisBasketProps) {
     </div>
   );
 }
+

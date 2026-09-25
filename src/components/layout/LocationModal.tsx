@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Dialog } from '../ui/Dialog';
 import { Button } from '../ui/Button';
 import { Input } from '../ui/Input';
-import { MapPin, Check } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Location01Icon, Tick01Icon } from '@hugeicons/core-free-icons';
 import { useBasket } from '../../context/BasketContext';
 import { LOCATIONS_LIST } from '../../data/mockData';
 import { LocationDetails } from '../../types';
@@ -50,7 +51,7 @@ export function LocationModal() {
               placeholder="PIN code (e.g. 560001)"
               value={pinInput}
               onChange={(e) => setPinInput(e.target.value)}
-              leftIcon={<MapPin className="w-4 h-4" />}
+              leftIcon={<HugeiconsIcon icon={Location01Icon} size={16} strokeWidth={1.5} />}
               className="flex-1"
             />
             <Input
@@ -94,7 +95,7 @@ export function LocationModal() {
                 }`}
               >
                 <div className="flex items-center gap-2.5">
-                  <MapPin className="w-4 h-4 text-status-green" />
+                  <HugeiconsIcon icon={Location01Icon} size={16} strokeWidth={1.5} className="text-status-green" />
                   <div>
                     <span className="text-main font-bold text-sm">
                       {loc.city}
@@ -106,7 +107,7 @@ export function LocationModal() {
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="font-mono text-sub text-xs">{loc.pinCode}</span>
-                  {isSelected && <Check className="w-4 h-4 text-status-green" />}
+                  {isSelected && <HugeiconsIcon icon={Tick01Icon} size={16} strokeWidth={2} className="text-status-green" />}
                 </div>
               </button>
             );
@@ -116,3 +117,4 @@ export function LocationModal() {
     </Dialog>
   );
 }
+

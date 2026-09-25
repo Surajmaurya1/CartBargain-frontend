@@ -1,9 +1,9 @@
 import React from 'react';
 import { useBasket } from '../../context/BasketContext';
 import { Badge } from '../ui/Badge';
-import { Info } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { InformationCircleIcon } from '@hugeicons/core-free-icons';
 import { formatCurrency } from '../../lib/utils';
-
 import { PROVIDERS_META } from '../../data/mockData';
 
 export function ProviderTotals() {
@@ -77,9 +77,10 @@ export function ProviderTotals() {
 
       {/* Disclaimer */}
       <div className="flex items-start gap-2.5 px-4 py-3.5 rounded-[18px] bg-card-inner border border-border text-xs text-sub">
-        <Info className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+        <HugeiconsIcon icon={InformationCircleIcon} size={15} strokeWidth={1.5} className="mt-0.5 shrink-0" />
         <p className="leading-relaxed">Prices and availability may vary at merchant checkout.</p>
       </div>
     </aside>
   );
 }
+

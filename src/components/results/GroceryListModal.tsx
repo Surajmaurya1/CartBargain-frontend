@@ -4,7 +4,8 @@ import { useBasket } from '../../context/BasketContext';
 import { ItemIcon } from '../ui/ItemIcon';
 import { Button } from '../ui/Button';
 import { Input } from '../ui/Input';
-import { Trash2, Plus, ShoppingBag, Check } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Delete02Icon, PlusSignIcon, ShoppingBag01Icon, Tick01Icon } from '@hugeicons/core-free-icons';
 
 interface GroceryListModalProps {
   isOpen: boolean;
@@ -29,7 +30,7 @@ export function GroceryListModal({ isOpen, onClose }: GroceryListModalProps) {
       onClose={onClose}
       title={
         <div className="flex items-center gap-2">
-          <ShoppingBag className="w-5 h-5 text-main" />
+          <HugeiconsIcon icon={ShoppingBag01Icon} size={20} strokeWidth={1.5} className="text-main" />
           <span>Your Grocery Basket ({items.length} {items.length === 1 ? 'item' : 'items'})</span>
         </div>
       }
@@ -56,7 +57,7 @@ export function GroceryListModal({ isOpen, onClose }: GroceryListModalProps) {
               className="text-xs h-10 w-28 shrink-0"
             />
             <Button type="submit" size="sm" variant="primary" className="h-10 px-4 text-xs rounded-xl shrink-0 font-bold">
-              <Plus className="w-3.5 h-3.5 mr-1" /> Add
+              <HugeiconsIcon icon={PlusSignIcon} size={14} strokeWidth={2} className="mr-1" /> Add
             </Button>
           </div>
         </form>
@@ -84,7 +85,7 @@ export function GroceryListModal({ isOpen, onClose }: GroceryListModalProps) {
                 className="p-1.5 text-sub hover:text-red-400 hover:bg-hover rounded-xl transition-colors"
                 aria-label={`Remove ${item.name}`}
               >
-                <Trash2 className="w-4 h-4" />
+                <HugeiconsIcon icon={Delete02Icon} size={16} strokeWidth={1.5} />
               </button>
             </div>
           ))}
@@ -103,7 +104,7 @@ export function GroceryListModal({ isOpen, onClose }: GroceryListModalProps) {
             size="md"
             onClick={onClose}
             className="h-10 px-6 text-xs font-bold rounded-full"
-            leftIcon={<Check className="w-3.5 h-3.5" />}
+            leftIcon={<HugeiconsIcon icon={Tick01Icon} size={14} strokeWidth={2} />}
           >
             Done
           </Button>
@@ -112,3 +113,4 @@ export function GroceryListModal({ isOpen, onClose }: GroceryListModalProps) {
     </Dialog>
   );
 }
+

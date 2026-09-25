@@ -1,23 +1,24 @@
 import React from 'react';
-import { Shield, Database, Sparkles } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Shield01Icon, Database01Icon, SparklesIcon } from '@hugeicons/core-free-icons';
 
 export function AboutSection() {
   const features = [
     {
       tag: 'LIVE',
-      icon: <Database className="w-5 h-5 text-btn-text" />,
+      icon: <HugeiconsIcon icon={Database01Icon} size={20} strokeWidth={1.5} className="text-btn-text" />,
       title: 'SerpApi Data Feeds',
       description: 'Real-time search queries against actual merchant catalogs and current delivery fees.',
     },
     {
       tag: '100%',
-      icon: <Shield className="w-5 h-5 text-btn-text" />,
+      icon: <HugeiconsIcon icon={Shield01Icon} size={20} strokeWidth={1.5} className="text-btn-text" />,
       title: 'Unbiased Algorithms',
       description: 'Deterministic unit-cost math with zero store bias, affiliate manipulation, or hidden fees.',
     },
     {
       tag: 'DIRECT',
-      icon: <Sparkles className="w-5 h-5 text-btn-text" />,
+      icon: <HugeiconsIcon icon={SparklesIcon} size={20} strokeWidth={1.5} className="text-btn-text" />,
       title: 'Seamless Checkout',
       description: 'One-tap store redirection to complete your optimized basket directly in your preferred app.',
     },
@@ -60,3 +61,4 @@ export function AboutSection() {
     </section>
   );
 }
+

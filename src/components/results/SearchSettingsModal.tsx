@@ -4,7 +4,14 @@ import { useBasket } from '../../context/BasketContext';
 import { Select } from '../ui/Select';
 import { Button } from '../ui/Button';
 import { ProviderId, SearchEngineType } from '../../types';
-import { MapPin, Search, Store, Check, SlidersHorizontal } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import {
+  Location01Icon,
+  Search01Icon,
+  Store01Icon,
+  Tick01Icon,
+  SlidersHorizontalIcon,
+} from '@hugeicons/core-free-icons';
 
 interface SearchSettingsModalProps {
   isOpen: boolean;
@@ -40,7 +47,7 @@ export function SearchSettingsModal({ isOpen, onClose }: SearchSettingsModalProp
       onClose={onClose}
       title={
         <div className="flex items-center gap-2">
-          <SlidersHorizontal className="w-5 h-5 text-main" />
+          <HugeiconsIcon icon={SlidersHorizontalIcon} size={20} strokeWidth={1.5} className="text-main" />
           <span>Location &amp; Search Settings</span>
         </div>
       }
@@ -51,12 +58,12 @@ export function SearchSettingsModal({ isOpen, onClose }: SearchSettingsModalProp
         {/* Delivery Location Section */}
         <div className="space-y-2">
           <label className="text-xs font-bold text-main flex items-center gap-2">
-            <MapPin className="w-4 h-4 text-sub" />
+            <HugeiconsIcon icon={Location01Icon} size={15} strokeWidth={1.5} className="text-sub" />
             Delivery Location
           </label>
           <div className="flex items-center justify-between p-3.5 rounded-2xl bg-card-inner border border-border">
             <div className="flex items-center gap-2.5 min-w-0">
-              <MapPin className="w-4 h-4 text-status-green shrink-0" />
+              <HugeiconsIcon icon={Location01Icon} size={16} strokeWidth={1.5} className="text-status-green shrink-0" />
               <div className="min-w-0">
                 <div className="text-xs font-bold text-main truncate">
                   {location.formatted || `${location.city}, ${location.pinCode}`}
@@ -80,7 +87,7 @@ export function SearchSettingsModal({ isOpen, onClose }: SearchSettingsModalProp
         {/* Search Engine Section */}
         <div className="space-y-2">
           <label className="text-xs font-bold text-main flex items-center gap-2">
-            <Search className="w-4 h-4 text-sub" />
+            <HugeiconsIcon icon={Search01Icon} size={15} strokeWidth={1.5} className="text-sub" />
             Search Source Engine
           </label>
           <Select
@@ -93,7 +100,7 @@ export function SearchSettingsModal({ isOpen, onClose }: SearchSettingsModalProp
         {/* Stores Selection Section */}
         <div className="space-y-2">
           <label className="text-xs font-bold text-main flex items-center gap-2">
-            <Store className="w-4 h-4 text-sub" />
+            <HugeiconsIcon icon={Store01Icon} size={15} strokeWidth={1.5} className="text-sub" />
             Active Quick Commerce Stores
           </label>
           <div className="grid grid-cols-2 gap-2.5">
@@ -123,7 +130,7 @@ export function SearchSettingsModal({ isOpen, onClose }: SearchSettingsModalProp
                       isSelected ? 'bg-btn-bg text-btn-text' : 'border border-border bg-card'
                     }`}
                   >
-                    {isSelected && <Check className="w-3 h-3 text-btn-text" />}
+                    {isSelected && <HugeiconsIcon icon={Tick01Icon} size={12} strokeWidth={2.5} className="text-btn-text" />}
                   </div>
                 </button>
               );
@@ -138,7 +145,7 @@ export function SearchSettingsModal({ isOpen, onClose }: SearchSettingsModalProp
             size="md"
             onClick={onClose}
             className="h-10 px-6 text-xs font-bold rounded-full"
-            leftIcon={<Check className="w-3.5 h-3.5" />}
+            leftIcon={<HugeiconsIcon icon={Tick01Icon} size={14} strokeWidth={2} />}
           >
             Apply Settings
           </Button>
@@ -147,3 +154,4 @@ export function SearchSettingsModal({ isOpen, onClose }: SearchSettingsModalProp
     </Dialog>
   );
 }
+

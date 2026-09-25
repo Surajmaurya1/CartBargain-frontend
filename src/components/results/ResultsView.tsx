@@ -4,7 +4,8 @@ import { GroceryListModal } from './GroceryListModal';
 import { SearchSettingsModal } from './SearchSettingsModal';
 import { motion } from 'framer-motion';
 import { useBasket } from '../../context/BasketContext';
-import { ArrowLeft, ShoppingBag, SlidersHorizontal } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { ArrowLeft01Icon, ShoppingBag01Icon, SlidersHorizontalIcon } from '@hugeicons/core-free-icons';
 
 export function ResultsView() {
   const { setCurrentScreen, items, location } = useBasket();
@@ -28,7 +29,7 @@ export function ResultsView() {
           aria-label="Back to search"
           title="Back to search"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <HugeiconsIcon icon={ArrowLeft01Icon} size={16} strokeWidth={2} />
         </button>
 
         {/* Grocery List Modal Trigger */}
@@ -38,7 +39,7 @@ export function ResultsView() {
           className="h-10 px-3.5 sm:px-4 rounded-2xl bg-card-item border border-border hover:bg-hover hover:border-sub text-main flex items-center gap-2 shrink-0 transition-colors shadow-sm text-xs font-bold focus:outline-none"
           title="View & edit grocery basket"
         >
-          <ShoppingBag className="w-4 h-4 text-status-green shrink-0" />
+          <HugeiconsIcon icon={ShoppingBag01Icon} size={16} strokeWidth={1.5} className="text-status-green shrink-0" />
           <span>Grocery List</span>
           <span className="px-2 py-0.5 rounded-full bg-btn-bg text-btn-text text-[11px] font-extrabold ml-0.5">
             {items.length}
@@ -52,7 +53,7 @@ export function ResultsView() {
           className="h-10 px-3.5 sm:px-4 rounded-2xl bg-card-item border border-border hover:bg-hover hover:border-sub text-main flex items-center gap-2 shrink-0 transition-colors shadow-sm text-xs font-bold focus:outline-none"
           title="Store and location settings"
         >
-          <SlidersHorizontal className="w-4 h-4 text-sub shrink-0" />
+          <HugeiconsIcon icon={SlidersHorizontalIcon} size={16} strokeWidth={1.5} className="text-sub shrink-0" />
           <span className="max-w-[120px] sm:max-w-[180px] truncate">
             {location.pinCode || location.city}
           </span>
@@ -76,3 +77,4 @@ export function ResultsView() {
     </motion.div>
   );
 }
+

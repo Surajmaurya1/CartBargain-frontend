@@ -1,23 +1,24 @@
 import React from 'react';
-import { Search, Split, ShoppingBag } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Search01Icon, GitForkIcon, ShoppingBag01Icon } from '@hugeicons/core-free-icons';
 
 export function HowItWorksSection() {
   const steps = [
     {
       step: '01',
-      icon: <Search className="w-5 h-5 text-btn-text" />,
+      icon: <HugeiconsIcon icon={Search01Icon} size={20} strokeWidth={1.5} className="text-btn-text" />,
       title: 'Enter Items',
       description: 'Type items with quantities. We parse units automatically.',
     },
     {
       step: '02',
-      icon: <Split className="w-5 h-5 text-btn-text" />,
+      icon: <HugeiconsIcon icon={GitForkIcon} size={20} strokeWidth={1.5} className="text-btn-text" />,
       title: 'Compare Stores',
       description: 'Find matching products, stock, and fees across stores in real-time.',
     },
     {
       step: '03',
-      icon: <ShoppingBag className="w-5 h-5 text-btn-text" />,
+      icon: <HugeiconsIcon icon={ShoppingBag01Icon} size={20} strokeWidth={1.5} className="text-btn-text" />,
       title: 'Optimize Total',
       description: 'Check out single store or split items for maximum grocery savings.',
     },
@@ -60,3 +61,4 @@ export function HowItWorksSection() {
     </div>
   );
 }
+

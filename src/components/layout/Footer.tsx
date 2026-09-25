@@ -1,5 +1,6 @@
 import React from 'react';
-import { ShoppingCart } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { ShoppingCart01Icon } from '@hugeicons/core-free-icons';
 
 export function Footer() {
   return (
@@ -7,7 +8,7 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           <div className="w-5 h-5 rounded-md bg-btn-bg flex items-center justify-center text-btn-text">
-            <ShoppingCart className="w-3 h-3" />
+            <HugeiconsIcon icon={ShoppingCart01Icon} size={12} strokeWidth={1.5} />
           </div>
           <span className="font-semibold text-main">
             CartBargain
@@ -25,3 +26,4 @@ export function Footer() {
     </footer>
   );
 }
+

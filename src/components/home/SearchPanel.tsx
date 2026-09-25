@@ -3,7 +3,16 @@ import { useBasket } from '../../context/BasketContext';
 import { Button } from '../ui/Button';
 import { Input } from '../ui/Input';
 import { Select } from '../ui/Select';
-import { MapPin, ShoppingCart, Search, ArrowRight, Plus, Store, Check } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import {
+  Location01Icon,
+  ShoppingCart01Icon,
+  Search01Icon,
+  ArrowRight01Icon,
+  PlusSignIcon,
+  Store01Icon,
+  Tick01Icon,
+} from '@hugeicons/core-free-icons';
 import { ProviderId, SearchEngineType } from '../../types';
 import { ThinkingOrb } from 'thinking-orbs';
 
@@ -79,7 +88,7 @@ export function SearchPanel() {
         {/* Row 1: Location & PIN */}
         <div>
           <label className="text-sm font-bold text-main flex items-center gap-2 mb-2.5">
-            <MapPin className="w-4 h-4 text-sub" />
+            <HugeiconsIcon icon={Location01Icon} size={16} strokeWidth={1.5} className="text-sub" />
             Delivery Location
           </label>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -89,7 +98,7 @@ export function SearchPanel() {
               className="flex items-center justify-between px-5 py-3 h-12 rounded-2xl border border-border bg-background hover:bg-hover/40 text-sm text-main transition-colors text-left font-medium"
             >
               <div className="flex items-center gap-2 truncate">
-                <MapPin className="w-4 h-4 text-status-green shrink-0" />
+                <HugeiconsIcon icon={Location01Icon} size={16} strokeWidth={1.5} className="text-status-green shrink-0" />
                 <span className="truncate">{location.formatted || `${location.city}, ${location.pinCode}`}</span>
               </div>
               <span className="text-xs text-sub shrink-0">Change</span>
@@ -101,7 +110,7 @@ export function SearchPanel() {
               value={pinVal}
               onChange={handlePinChange}
               maxLength={6}
-              leftIcon={<MapPin className="w-4 h-4" />}
+              leftIcon={<HugeiconsIcon icon={Location01Icon} size={16} strokeWidth={1.5} />}
               className="h-12"
             />
           </div>
@@ -110,7 +119,7 @@ export function SearchPanel() {
         {/* Row 2: What do you need? */}
         <div>
           <label className="text-sm font-bold text-main flex items-center gap-2 mb-2.5">
-            <ShoppingCart className="w-4 h-4 text-sub" />
+            <HugeiconsIcon icon={ShoppingCart01Icon} size={16} strokeWidth={1.5} className="text-sub" />
             What do you need?
           </label>
           <Input
@@ -131,7 +140,7 @@ export function SearchPanel() {
                 onClick={() => addQuickItem(suggest)}
                 className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-background border border-border hover:bg-hover hover:border-sub/40 text-main text-xs font-medium transition-all"
               >
-                <Plus className="w-3 h-3 text-sub" />
+                <HugeiconsIcon icon={PlusSignIcon} size={12} strokeWidth={2} className="text-sub" />
                 {suggest}
               </button>
             ))}
@@ -142,7 +151,7 @@ export function SearchPanel() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
           <div>
             <label className="text-sm font-bold text-main flex items-center gap-2 mb-2.5">
-              <Search className="w-4 h-4 text-sub" />
+              <HugeiconsIcon icon={Search01Icon} size={16} strokeWidth={1.5} className="text-sub" />
               Search Source
             </label>
             <Select
@@ -154,7 +163,7 @@ export function SearchPanel() {
 
           <div>
             <label className="text-sm font-bold text-main flex items-center gap-2 mb-2.5">
-              <Store className="w-4 h-4 text-sub" />
+              <HugeiconsIcon icon={Store01Icon} size={16} strokeWidth={1.5} className="text-sub" />
               Stores to Compare
             </label>
             <div className="flex flex-wrap items-center gap-2">
@@ -182,7 +191,7 @@ export function SearchPanel() {
                       style={{ backgroundColor: brandColors[provider.id] }}
                     />
                     {provider.name}
-                    {isSelected && <Check className="w-3.5 h-3.5 text-btn-text ml-0.5" />}
+                    {isSelected && <HugeiconsIcon icon={Tick01Icon} size={14} strokeWidth={2.5} className="text-btn-text ml-0.5" />}
                   </button>
                 );
               })}
@@ -198,7 +207,7 @@ export function SearchPanel() {
             size="lg"
             className="w-full text-sm font-extrabold h-12 rounded-full"
             disabled={isLoadingSearch}
-            rightIcon={!isLoadingSearch ? <ArrowRight className="w-4 h-4 text-btn-text" /> : undefined}
+            rightIcon={!isLoadingSearch ? <HugeiconsIcon icon={ArrowRight01Icon} size={16} strokeWidth={2} className="text-btn-text" /> : undefined}
           >
             {isLoadingSearch ? (
               <span className="inline-flex items-center gap-2.5">
@@ -214,3 +223,4 @@ export function SearchPanel() {
     </div>
   );
 }
+

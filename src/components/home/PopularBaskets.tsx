@@ -1,7 +1,8 @@
 import React from 'react';
 import { POPULAR_PRESETS } from '../../data/mockData';
 import { useBasket } from '../../context/BasketContext';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { ArrowRight01Icon, SparklesIcon } from '@hugeicons/core-free-icons';
 import { motion } from 'framer-motion';
 
 export function PopularBaskets() {
@@ -11,7 +12,7 @@ export function PopularBaskets() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="mb-8">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-card border border-border text-xs font-semibold text-sub mb-3">
-          <Sparkles className="w-3.5 h-3.5 text-status-green" />
+          <HugeiconsIcon icon={SparklesIcon} size={15} strokeWidth={1.5} className="text-status-green" />
           <span>Quick Presets</span>
         </div>
         <h3 className="text-2xl sm:text-3xl font-extrabold text-main tracking-tight">
@@ -50,7 +51,7 @@ export function PopularBaskets() {
                 Est. Savings: <strong className="text-status-green font-bold">{preset.estSavings}</strong>
               </span>
               <span className="font-bold text-main inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-card-item group-hover:bg-btn-bg group-hover:text-btn-text transition-colors">
-                Compare <ArrowRight className="w-3.5 h-3.5" />
+                Compare <HugeiconsIcon icon={ArrowRight01Icon} size={14} strokeWidth={2} />
               </span>
             </div>
           </motion.div>
@@ -59,3 +60,4 @@ export function PopularBaskets() {
     </div>
   );
 }
+

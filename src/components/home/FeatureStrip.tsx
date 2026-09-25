@@ -1,30 +1,37 @@
 import React from 'react';
-import { Search, Scale, Cpu, PiggyBank, ShieldCheck } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import {
+  Search01Icon,
+  BalanceScaleIcon,
+  CpuIcon,
+  PiggyBankIcon,
+  ShieldCheckIcon,
+} from '@hugeicons/core-free-icons';
 
 export function FeatureStrip() {
   const features = [
     {
-      icon: <Search className="w-4 h-4 text-btn-text" />,
+      icon: <HugeiconsIcon icon={Search01Icon} size={16} strokeWidth={1.5} className="text-btn-text" />,
       title: 'Multiple Stores',
       description: 'Blinkit, Zepto, Instamart, BB Now.',
     },
     {
-      icon: <Scale className="w-4 h-4 text-btn-text" />,
+      icon: <HugeiconsIcon icon={BalanceScaleIcon} size={16} strokeWidth={1.5} className="text-btn-text" />,
       title: 'Full Basket Pricing',
       description: 'Compare products and delivery fees.',
     },
     {
-      icon: <Cpu className="w-4 h-4 text-btn-text" />,
+      icon: <HugeiconsIcon icon={CpuIcon} size={16} strokeWidth={1.5} className="text-btn-text" />,
       title: 'Cart Optimization',
       description: 'Split cart calculation for lower total.',
     },
     {
-      icon: <PiggyBank className="w-4 h-4 text-btn-text" />,
+      icon: <HugeiconsIcon icon={PiggyBankIcon} size={16} strokeWidth={1.5} className="text-btn-text" />,
       title: 'Real Savings',
       description: 'Transparent price delta breakdown.',
     },
     {
-      icon: <ShieldCheck className="w-4 h-4 text-btn-text" />,
+      icon: <HugeiconsIcon icon={ShieldCheckIcon} size={16} strokeWidth={1.5} className="text-btn-text" />,
       title: 'Live SerpApi',
       description: 'Verified public merchant data.',
     },
@@ -55,3 +62,4 @@ export function FeatureStrip() {
     </div>
   );
 }
+

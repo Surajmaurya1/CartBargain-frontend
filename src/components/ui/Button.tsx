@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion, HTMLMotionProps } from 'framer-motion';
 import { cn } from '../../lib/utils';
-import { Loader2 } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Loading03Icon } from '@hugeicons/core-free-icons';
 
 export interface ButtonProps extends Omit<HTMLMotionProps<'button'>, 'children'> {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'subtle';
@@ -82,7 +83,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {isLoading ? (
-          <Loader2 className="w-4 h-4 animate-spin shrink-0" />
+          <HugeiconsIcon icon={Loading03Icon} size={16} strokeWidth={2} className="animate-spin shrink-0" />
         ) : (
           <>
             {leftIcon && <span className="shrink-0">{leftIcon}</span>}

@@ -2,7 +2,8 @@ import React from 'react';
 import { useBasket } from '../../context/BasketContext';
 import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';
-import { Check, Sparkles, ArrowRight } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Tick01Icon, SparklesIcon, ArrowRight01Icon } from '@hugeicons/core-free-icons';
 import { formatCurrency } from '../../lib/utils';
 import { PROVIDERS_META } from '../../data/mockData';
 import { ItemIcon } from '../ui/ItemIcon';
@@ -173,7 +174,7 @@ export function ComparisonTable() {
                 {summary.isCheapestOverall && (
                   <div className="absolute -top-3 left-4 z-10">
                     <span className="inline-flex items-center gap-1 px-3 py-0.5 rounded-full bg-btn-bg text-btn-text text-[11px] font-bold shadow-sm whitespace-nowrap">
-                      <Check className="w-3 h-3 text-btn-text" /> Cheapest Store
+                      <HugeiconsIcon icon={Tick01Icon} size={12} strokeWidth={2.5} className="text-btn-text" /> Cheapest Store
                     </span>
                   </div>
                 )}
@@ -227,7 +228,7 @@ export function ComparisonTable() {
       >
         <div className="space-y-1.5">
           <div className="inline-flex items-center gap-1.5 text-xs font-bold text-status-green">
-            <Sparkles className="w-3.5 h-3.5" />
+            <HugeiconsIcon icon={SparklesIcon} size={15} strokeWidth={1.5} />
             <span>Split &amp; Save Algorithm</span>
           </div>
           <h3 className="text-lg sm:text-xl font-extrabold tracking-tight text-main leading-snug">
@@ -250,7 +251,7 @@ export function ComparisonTable() {
               variant="primary"
               size="md"
               className="w-full sm:w-auto font-extrabold px-6 h-12 text-sm rounded-full shadow-md justify-center"
-              rightIcon={<ArrowRight className="w-4 h-4" />}
+              rightIcon={<HugeiconsIcon icon={ArrowRight01Icon} size={16} strokeWidth={2} />}
             >
               Optimize My Cart
             </Button>
@@ -260,3 +261,4 @@ export function ComparisonTable() {
     </div>
   );
 }
+

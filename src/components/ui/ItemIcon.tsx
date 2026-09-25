@@ -1,15 +1,16 @@
 import React from 'react';
+import { HugeiconsIcon } from '@hugeicons/react';
 import {
-  Wheat,
-  CircleDot,
-  Milk,
-  Egg,
-  Sandwich,
-  Box,
-  Droplets,
-  Coffee,
-  Package,
-} from 'lucide-react';
+  WheatIcon,
+  RiceBowl01Icon,
+  MilkBottleIcon,
+  EggIcon,
+  Bread01Icon,
+  PackageIcon,
+  DropletIcon,
+  Coffee01Icon,
+  Package01Icon,
+} from '@hugeicons/core-free-icons';
 import { ItemIconType } from '../../types';
 
 interface ItemIconProps {
@@ -18,27 +19,30 @@ interface ItemIconProps {
   size?: number;
 }
 
-export function ItemIcon({ type, className = 'w-4 h-4', size }: ItemIconProps) {
-  const iconProps = { className, size };
+export function ItemIcon({ type, className = 'w-4 h-4', size = 16 }: ItemIconProps) {
+  const getIcon = () => {
+    switch (type) {
+      case 'wheat':
+        return WheatIcon;
+      case 'rice':
+        return RiceBowl01Icon;
+      case 'milk':
+        return MilkBottleIcon;
+      case 'egg':
+        return EggIcon;
+      case 'bread':
+        return Bread01Icon;
+      case 'butter':
+        return PackageIcon;
+      case 'oil':
+        return DropletIcon;
+      case 'coffee':
+        return Coffee01Icon;
+      default:
+        return Package01Icon;
+    }
+  };
 
-  switch (type) {
-    case 'wheat':
-      return <Wheat {...iconProps} />;
-    case 'rice':
-      return <CircleDot {...iconProps} />;
-    case 'milk':
-      return <Milk {...iconProps} />;
-    case 'egg':
-      return <Egg {...iconProps} />;
-    case 'bread':
-      return <Sandwich {...iconProps} />;
-    case 'butter':
-      return <Box {...iconProps} />;
-    case 'oil':
-      return <Droplets {...iconProps} />;
-    case 'coffee':
-      return <Coffee {...iconProps} />;
-    default:
-      return <Package {...iconProps} />;
-  }
+  return <HugeiconsIcon icon={getIcon()} size={size} className={className} strokeWidth={1.5} />;
 }
+

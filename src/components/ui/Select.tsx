@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../../lib/utils';
-import { ChevronDown } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { ArrowDown01Icon } from '@hugeicons/core-free-icons';
 
 export interface SelectOption {
   value: string;
@@ -73,7 +74,7 @@ export function Select({
           ))}
         </select>
         <div className="absolute right-4 text-muted pointer-events-none flex items-center shrink-0">
-          <ChevronDown className="w-4 h-4" />
+          <HugeiconsIcon icon={ArrowDown01Icon} size={16} strokeWidth={1.5} />
         </div>
       </div>
       {error && (

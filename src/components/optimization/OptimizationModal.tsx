@@ -4,37 +4,44 @@ import { useBasket } from '../../context/BasketContext';
 import { OptimizationStrategy } from '../../types';
 import { OptimizationBreakdown } from './OptimizationBreakdown';
 import { WhyThisBasket } from './WhyThisBasket';
-import { Check, Layers, DollarSign, Store, Shield } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import {
+  Tick01Icon,
+  Layers01Icon,
+  CircleDollarSignIcon,
+  Store01Icon,
+  Shield01Icon,
+} from '@hugeicons/core-free-icons';
 
 const strategies: {
   id: OptimizationStrategy;
   title: string;
   description: string;
-  icon: React.ElementType;
+  icon: any;
 }[] = [
   {
     id: 'split_lowest_cost',
     title: 'Lowest Total Cost',
     description: 'Split across stores to minimize spend.',
-    icon: Layers,
+    icon: Layers01Icon,
   },
   {
     id: 'lowest_product_price',
     title: 'Lowest Item Price',
     description: 'Optimize strictly for unit prices.',
-    icon: DollarSign,
+    icon: CircleDollarSignIcon,
   },
   {
     id: 'single_store_best',
     title: 'Single Store Best',
     description: 'One provider with full coverage.',
-    icon: Store,
+    icon: Store01Icon,
   },
   {
     id: 'minimize_delivery_fees',
     title: 'Minimize Fees',
     description: 'Balance stores for free delivery.',
-    icon: Shield,
+    icon: Shield01Icon,
   },
 ];
 
@@ -61,7 +68,6 @@ export function OptimizationModal() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
           {strategies.map((strat) => {
             const isSelected = selectedStrategy === strat.id;
-            const Icon = strat.icon;
             return (
               <button
                 key={strat.id}
@@ -77,7 +83,12 @@ export function OptimizationModal() {
                 <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 ${
                   isSelected ? 'bg-btn-bg' : 'bg-card-item border border-border'
                 }`}>
-                  <Icon className={`w-4 h-4 ${isSelected ? 'text-btn-text' : 'text-sub'}`} />
+                  <HugeiconsIcon
+                    icon={strat.icon}
+                    size={16}
+                    strokeWidth={1.5}
+                    className={isSelected ? 'text-btn-text' : 'text-sub'}
+                  />
                 </div>
 
                 {/* Text */}
@@ -89,7 +100,7 @@ export function OptimizationModal() {
                 {/* Selected tick */}
                 {isSelected && (
                   <span className="absolute top-3 right-3">
-                    <Check className="w-3.5 h-3.5 text-status-green" />
+                    <HugeiconsIcon icon={Tick01Icon} size={14} strokeWidth={2.5} className="text-status-green" />
                   </span>
                 )}
               </button>
@@ -104,3 +115,4 @@ export function OptimizationModal() {
     </Dialog>
   );
 }
+

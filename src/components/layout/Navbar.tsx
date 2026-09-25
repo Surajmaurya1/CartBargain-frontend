@@ -2,7 +2,16 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useBasket } from '../../context/BasketContext';
 import { useTheme } from '../../context/ThemeContext';
-import { MapPin, ChevronDown, Sun, Moon, Menu, X, ArrowRight } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import {
+  Location01Icon,
+  ArrowDown01Icon,
+  Sun01Icon,
+  Moon01Icon,
+  Menu01Icon,
+  Cancel01Icon,
+  ArrowRight01Icon,
+} from '@hugeicons/core-free-icons';
 
 interface NavbarProps {
   activeTab?: string;
@@ -79,11 +88,11 @@ export function Navbar({ activeTab = 'Home', onTabClick }: NavbarProps) {
             className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-elevated/70 border border-border/80 hover:bg-hover hover:border-muted text-xs sm:text-sm font-medium text-main transition-all duration-150"
             title="Change Location"
           >
-            <MapPin className="w-3.5 h-3.5 text-status-green shrink-0" />
+            <HugeiconsIcon icon={Location01Icon} size={15} strokeWidth={1.5} className="text-status-green shrink-0" />
             <span className="max-w-[150px] truncate">
               {location.formatted || `${location.city}, ${location.pinCode}`}
             </span>
-            <ChevronDown className="w-3.5 h-3.5 text-muted shrink-0" />
+            <HugeiconsIcon icon={ArrowDown01Icon} size={14} strokeWidth={1.5} className="text-muted shrink-0" />
           </button>
 
           {/* Theme Toggle */}
@@ -94,9 +103,9 @@ export function Navbar({ activeTab = 'Home', onTabClick }: NavbarProps) {
             title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
           >
             {theme === 'light' ? (
-              <Moon className="w-4 h-4" />
+              <HugeiconsIcon icon={Moon01Icon} size={16} strokeWidth={1.5} />
             ) : (
-              <Sun className="w-4 h-4 text-btn-bg" />
+              <HugeiconsIcon icon={Sun01Icon} size={16} strokeWidth={1.5} className="text-btn-bg" />
             )}
           </button>
         </div>
@@ -110,9 +119,9 @@ export function Navbar({ activeTab = 'Home', onTabClick }: NavbarProps) {
             aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
           >
             {theme === 'light' ? (
-              <Moon className="w-3.5 h-3.5" />
+              <HugeiconsIcon icon={Moon01Icon} size={15} strokeWidth={1.5} />
             ) : (
-              <Sun className="w-3.5 h-3.5 text-btn-bg" />
+              <HugeiconsIcon icon={Sun01Icon} size={15} strokeWidth={1.5} className="text-btn-bg" />
             )}
           </button>
 
@@ -124,9 +133,9 @@ export function Navbar({ activeTab = 'Home', onTabClick }: NavbarProps) {
             aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? (
-              <X className="w-4 h-4 text-main" />
+              <HugeiconsIcon icon={Cancel01Icon} size={16} strokeWidth={1.5} className="text-main" />
             ) : (
-              <Menu className="w-4 h-4 text-main" />
+              <HugeiconsIcon icon={Menu01Icon} size={16} strokeWidth={1.5} className="text-main" />
             )}
           </button>
         </div>
@@ -147,7 +156,7 @@ export function Navbar({ activeTab = 'Home', onTabClick }: NavbarProps) {
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2.5 min-w-0">
                   <div className="w-8 h-8 rounded-xl bg-card flex items-center justify-center border border-border shrink-0">
-                    <MapPin className="w-4 h-4 text-status-green" />
+                    <HugeiconsIcon icon={Location01Icon} size={16} strokeWidth={1.5} className="text-status-green" />
                   </div>
                   <div className="min-w-0">
                     <div className="text-[11px] font-semibold text-sub">Delivery Location</div>
@@ -187,7 +196,7 @@ export function Navbar({ activeTab = 'Home', onTabClick }: NavbarProps) {
                     }`}
                   >
                     <span>{item.label}</span>
-                    {isSelected && <ArrowRight className="w-4 h-4 text-main" />}
+                    {isSelected && <HugeiconsIcon icon={ArrowRight01Icon} size={16} strokeWidth={1.5} className="text-main" />}
                   </button>
                 );
               })}

@@ -2,7 +2,14 @@ import React, { useState } from 'react';
 import { OptimizationResult } from '../../types';
 import { formatCurrency } from '../../lib/utils';
 import { PROVIDERS_META } from '../../data/mockData';
-import { ExternalLink, Copy, Check, Clock, TrendingDown } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import {
+  LinkSquare01Icon,
+  Copy01Icon,
+  Tick01Icon,
+  Clock01Icon,
+  TrendingDownIcon,
+} from '@hugeicons/core-free-icons';
 import { Button } from '../ui/Button';
 import { ItemIcon } from '../ui/ItemIcon';
 
@@ -46,7 +53,7 @@ export function OptimizationBreakdown({ result }: OptimizationBreakdownProps) {
         </div>
 
         <div className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-btn-bg text-btn-text text-xs font-bold shadow-sm shrink-0">
-          <TrendingDown className="w-3.5 h-3.5" />
+          <HugeiconsIcon icon={TrendingDownIcon} size={15} strokeWidth={2} />
           <span>Save ~{formatCurrency(result.savings)} ({result.savingsPercent}%)</span>
         </div>
       </div>
@@ -102,7 +109,7 @@ export function OptimizationBreakdown({ result }: OptimizationBreakdownProps) {
                 {/* Footer */}
                 <div className="flex items-center justify-between px-4 py-2.5 border-t border-border">
                   <span className="text-sub flex items-center gap-1 text-xs">
-                    <Clock className="w-3 h-3 text-sub" />
+                    <HugeiconsIcon icon={Clock01Icon} size={14} strokeWidth={1.5} className="text-sub" />
                     ~{meta?.estimatedTimeMin || 10}–{meta?.estimatedTimeMax || 15}m delivery
                   </span>
                   <a
@@ -111,7 +118,7 @@ export function OptimizationBreakdown({ result }: OptimizationBreakdownProps) {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 font-bold text-main hover:underline text-xs"
                   >
-                    Open store <ExternalLink className="w-3 h-3" />
+                    Open store <HugeiconsIcon icon={LinkSquare01Icon} size={14} strokeWidth={1.5} />
                   </a>
                 </div>
               </div>
@@ -128,8 +135,8 @@ export function OptimizationBreakdown({ result }: OptimizationBreakdownProps) {
           onClick={handleCopyList}
           leftIcon={
             copied
-              ? <Check className="w-3.5 h-3.5 text-status-green" />
-              : <Copy className="w-3.5 h-3.5" />
+              ? <HugeiconsIcon icon={Tick01Icon} size={14} strokeWidth={2.5} className="text-status-green" />
+              : <HugeiconsIcon icon={Copy01Icon} size={14} strokeWidth={1.5} />
           }
           className="text-xs h-9 px-4 rounded-full"
         >
@@ -139,3 +146,4 @@ export function OptimizationBreakdown({ result }: OptimizationBreakdownProps) {
     </div>
   );
 }
+
