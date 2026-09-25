@@ -17,7 +17,7 @@ export function ResultsView() {
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2 }}
-      className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 space-y-6"
+      className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 sm:pt-5 pb-8 sm:pb-12 space-y-6"
     >
       {/* Top Results Action Bar */}
       <div className="flex items-center gap-2 sm:gap-2.5 pb-2 border-b border-border/70 overflow-x-auto no-scrollbar">

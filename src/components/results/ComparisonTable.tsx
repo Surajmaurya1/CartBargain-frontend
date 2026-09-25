@@ -244,14 +244,15 @@ export function ComparisonTable() {
             size="pulse-inner"
             colorVariant="ocean"
             theme={theme}
-            className="w-full sm:w-auto rounded-full"
+            strength={1}
+            className="w-full sm:w-auto rounded-full overflow-hidden"
           >
             <Button
               onClick={() => setIsOptimizationModalOpen(true)}
-              variant="primary"
+              variant="outline"
               size="md"
-              className="w-full sm:w-auto font-extrabold px-6 h-12 text-sm rounded-full shadow-md justify-center"
-              rightIcon={<HugeiconsIcon icon={ArrowRight01Icon} size={16} strokeWidth={2} />}
+              className="w-full sm:w-auto font-extrabold px-6 h-12 text-sm rounded-full shadow-md justify-center bg-card/40 dark:bg-card-inner/50 backdrop-blur-xl border border-border/80 hover:bg-hover/70 text-main active:scale-[0.98] transition-all"
+              rightIcon={<HugeiconsIcon icon={ArrowRight01Icon} size={16} strokeWidth={2.2} className="text-status-green" />}
             >
               Optimize My Cart
             </Button>
@@ -261,4 +262,5 @@ export function ComparisonTable() {
     </div>
   );
 }
+
 

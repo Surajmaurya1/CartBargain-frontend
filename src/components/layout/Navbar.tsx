@@ -38,7 +38,7 @@ export function Navbar({ activeTab = 'Home', onTabClick }: NavbarProps) {
   ];
 
   return (
-    <div className="sticky top-3 sm:top-4 z-40 w-full px-3.5 sm:px-6 pointer-events-none">
+    <div className="sticky top-3 sm:top-4 z-40 w-full px-3.5 sm:px-6 pb-2.5 sm:pb-3.5 pointer-events-none">
       <header className="max-w-5xl mx-auto bg-card/75 dark:bg-card/70 backdrop-blur-2xl backdrop-saturate-150 border border-border/80 rounded-full px-4 sm:px-6 py-2.5 sm:py-3 shadow-elevated dark:shadow-elevated pointer-events-auto flex items-center justify-between gap-3 sm:gap-6 transition-all duration-200">
         {/* Left: Brand + Desktop Nav Links */}
         <div className="flex items-center gap-6 sm:gap-8">
