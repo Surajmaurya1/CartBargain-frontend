@@ -1,0 +1,321 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════════
+   DESIGN TOKENS — STRICT COLOR SYSTEM
+   Inspired by bencho.dev premium minimal aesthetic
+   ═══════════════════════════════════════════════════════════════ */
+
+@layer base {
+  /* ── Dark Mode (Default) ──────────────────────────────────────── */
+  :root,
+  .dark {
+    /* Backgrounds */
+    --color-background:   #101114;   /* Primary page background */
+    --color-card:         #1D1E21;   /* Card/container surface */
+    --color-elevated:     #2C2D31;   /* Elevated surfaces, dropdowns */
+    --color-hover:        #34353A;   /* Hover/active states */
+
+    /* Navigation */
+    --color-nav:          rgba(29, 30, 33, 0.85);  /* Frosted nav background */
+
+    /* Primary Action (Button) */
+    --color-btn-bg:       #ECEAE5;   /* Primary button background */
+    --color-btn-text:     #101114;   /* Primary button text */
+
+    /* ── Typography ──────────────────────────────────────────────── */
+    --color-text-main:    #ECEAE5;   /* Primary text / headings */
+    --color-text-sub:     #A7A6A2;   /* Secondary body text */
+    --color-text-muted:   #74757A;   /* Muted labels, hints */
+
+    /* Borders */
+    --color-border:       #2C2D31;   /* Subtle borders, dividers */
+
+    /* ── Semantic Aliases (for Tailwind) ────────────────────────── */
+    --background:         #101114;
+    --foreground:         #ECEAE5;
+    --card:               #1D1E21;
+    --card-foreground:    #ECEAE5;
+    --border:             #2C2D31;
+    --input:              #2C2D31;
+    --ring:               #34353A;
+    --muted:              #2C2D31;
+    --muted-foreground:   #74757A;
+  }
+
+  /* ── Light Mode ───────────────────────────────────────────────── */
+  .light {
+    /* Backgrounds */
+    --color-background:   #FFFFFF;   /* Primary page background */
+    --color-card:         #F1F1F2;   /* Card/container surface */
+    --color-elevated:     #E7E7E8;   /* Elevated surfaces, dropdowns */
+    --color-hover:        #E7E7E8;   /* Hover/active states */
+
+    /* Navigation */
+    --color-nav:          rgba(255, 255, 255, 0.9);  /* Frosted nav background */
+
+    /* Primary Action (Button) */
+    --color-btn-bg:       #ECEAE5;   /* Primary button background */
+    --color-btn-text:     #101114;   /* Primary button text */
+
+    /* ── Typography ──────────────────────────────────────────────── */
+    --color-text-main:    #101114;   /* Primary text / headings */
+    --color-text-sub:     #5F6064;   /* Secondary body text */
+    --color-text-muted:   #8A8B8F;   /* Muted labels, hints */
+
+    /* Borders */
+    --color-border:       #DCDCDD;   /* Subtle borders, dividers */
+
+    /* ── Semantic Aliases (for Tailwind) ────────────────────────── */
+    --background:         #FFFFFF;
+    --foreground:         #101114;
+    --card:               #F1F1F2;
+    --card-foreground:    #101114;
+    --border:             #DCDCDD;
+    --input:              #DCDCDD;
+    --ring:               #E7E7E8;
+    --muted:              #F1F1F2;
+    --muted-foreground:   #8A8B8F;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════════════════════════ */
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+    font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  /* Headings get the main text color for stronger hierarchy */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-text-main);
+  }
+
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-muted);
+  }
+
+  /* ── Selection ── */
+  ::selection {
+    background: var(--color-btn-bg);
+    color: var(--color-btn-text);
+  }
+
+  /* ── Focus Visible ── */
+  :focus-visible {
+    outline: none;
+    ring: 2px solid var(--color-btn-bg);
+    ring-offset: 2px;
+    ring-offset-color: var(--color-background);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   COMPONENT BASE STYLES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Card base — subtle border, controlled radius, minimal shadow */
+.card-base {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.card-base:hover {
+  border-color: var(--color-text-muted);
+}
+
+.dark .card-base:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.light .card-base:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Elevated card for dropdowns, modals, tooltips */
+.card-elevated {
+  background-color: var(--color-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.light .card-elevated {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Interactive surface — for chips, pills, buttons */
+.interactive-surface {
+  background-color: var(--color-hover);
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.interactive-surface:hover {
+  background-color: var(--color-elevated);
+  border-color: var(--color-text-muted);
+}
+
+/* Input base */
+.input-base {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  color: var(--color-text-main);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input-base:focus {
+  border-color: var(--color-btn-bg);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-btn-bg) 20%, transparent);
+}
+
+.input-base::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* Table styles */
+.table-base {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table-base th {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-elevated);
+}
+
+.table-base td {
+  padding: 16px 18px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+  color: var(--color-text-main);
+}
+
+.table-base tbody tr:hover td {
+  background-color: var(--color-hover);
+  transition: background-color 0.12s ease;
+}
+
+.table-base tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Feature strip background */
+.feature-strip-bg {
+  background-color: var(--color-elevated);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.25s ease;
+}
+
+/* Block card — used in feature strip, how-it-works, about */
+.block-card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+}
+
+/* Checklist rows */
+.block-checklist-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  transition: background-color 0.12s ease;
+}
+
+.block-checklist-row:hover {
+  background-color: var(--color-hover);
+}
+
+.block-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  border: 1.5px solid var(--color-border);
+  background-color: var(--color-elevated);
+  flex-shrink: 0;
+  transition: border-color 0.12s ease, background-color 0.12s ease;
+}
+
+.block-checklist-row:hover .block-checkbox {
+  border-color: var(--color-text-muted);
+}
+
+/* ── Utility Animations ── */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease both;
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease both;
+}
+
+/* Staggered entrance for lists */
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
+.stagger-5 { animation-delay: 0.25s; }
+
+/* Custom sizing utilities */
+.w-4\.5 { width: 1.125rem; }
+.h-4\.5 { height: 1.125rem; }
+
+/* ── Spring transition utility ── */
+.spring-transition {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
