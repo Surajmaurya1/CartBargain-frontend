@@ -14,7 +14,7 @@ export function OptimizationBreakdown({ result }: OptimizationBreakdownProps) {
   const [copied, setCopied] = useState(false);
 
   const handleCopyList = () => {
-    const lines: string[] = [`BlinkBargain Optimized Basket — Total: ${formatCurrency(result.estimatedTotal)}`];
+    const lines: string[] = [`CartBargain Optimized Basket — Total: ${formatCurrency(result.estimatedTotal)}`];
     result.orders.forEach((order) => {
       lines.push(`\n[${order.providerName}] - Subtotal: ${formatCurrency(order.subtotal)}`);
       order.items.forEach((item) => {

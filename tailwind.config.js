@@ -11,6 +11,8 @@ export default {
         // ── Core backgrounds ──────────────────────────────────────────
         background: 'var(--color-background)',
         card: 'var(--color-card)',
+        'card-inner': 'var(--color-card-inner)',
+        'card-item': 'var(--color-card-item)',
         elevated: 'var(--color-elevated)',
         hover: 'var(--color-hover)',
 
@@ -25,6 +27,9 @@ export default {
         main: 'var(--color-text-main)',
         sub: 'var(--color-text-sub)',
         muted: 'var(--color-text-muted)',
+
+        // ── Status ───────────────────────────────────────────────────
+        'status-green': 'var(--color-status-green)',
 
         // ── Border ───────────────────────────────────────────────────
         border: 'var(--color-border)',

@@ -10,7 +10,7 @@ export function Footer() {
             <ShoppingCart className="w-3 h-3" />
           </div>
           <span className="font-semibold text-main">
-            BlinkBargain
+            CartBargain
           </span>
           <span className="text-[11px] text-sub">
             — Basket Price Comparison

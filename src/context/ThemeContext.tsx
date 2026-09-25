@@ -12,7 +12,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
-    const saved = localStorage.getItem('blinkbargain-theme');
+    const saved = localStorage.getItem('cartbargain-theme') || localStorage.getItem('blinkbargain-theme');
     if (saved === 'light' || saved === 'dark') return saved;
     return 'dark'; // Default to dark
   });
@@ -28,7 +28,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       root.classList.add('light');
     }
     root.setAttribute('data-theme', theme);
-    localStorage.setItem('blinkbargain-theme', theme);
+    localStorage.setItem('cartbargain-theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {

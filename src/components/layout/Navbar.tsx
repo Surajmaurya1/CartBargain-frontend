@@ -41,10 +41,10 @@ export function Navbar({ activeTab = 'Home', onTabClick }: NavbarProps) {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="flex items-center text-left focus-visible:outline-none rounded-full"
-            aria-label="BlinkBargain Home"
+            aria-label="CartBargain Home"
           >
             <span className="text-sm sm:text-base font-extrabold tracking-tight text-main">
-              BlinkBargain
+              CartBargain
             </span>
           </motion.button>
 

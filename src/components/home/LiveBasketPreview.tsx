@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, TrendingDown, Clock, ShieldCheck } from 'lucide-react';
+import { ShoppingBasket, TrendingDown, Clock, ShieldCheck } from 'lucide-react';
 
 export function LiveBasketPreview() {
   return (
@@ -17,7 +17,7 @@ export function LiveBasketPreview() {
 
         {/* Top Feature Pill */}
         <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-background border border-border text-xs font-semibold text-sub mb-2 shadow-sm">
-          <Sparkles className="w-3.5 h-3.5 text-status-green" />
+          <ShoppingBasket className="w-3.5 h-3.5 text-status-green" />
           <span>Real-time Quick Commerce Comparison</span>
         </div>
 
