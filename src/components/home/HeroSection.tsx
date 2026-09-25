@@ -2,12 +2,8 @@ import React from 'react';
 import { SearchPanel } from './SearchPanel';
 import { LiveBasketPreview } from './LiveBasketPreview';
 import { motion } from 'framer-motion';
-import { MetalText } from 'metal-fx';
-import { useTheme } from '../../context/ThemeContext';
 
 export function HeroSection() {
-  const { theme } = useTheme();
-
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-8 pb-12 space-y-6 sm:space-y-8">
       {/* Hero Headline & Subtitle */}
@@ -19,13 +15,9 @@ export function HeroSection() {
       >
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-heading leading-[1.15] flex flex-wrap items-center gap-x-2.5">
           <span>Compare.</span>
-          <MetalText
-            font="800 48px/1.15 Inter, -apple-system, sans-serif"
-            color={theme === 'dark' ? '#FFFFFF' : '#0F172A'}
-            strength={0.95}
-          >
+          <span className="text-main underline decoration-status-green/60 decoration-wavy decoration-2 underline-offset-4">
             Optimize.
-          </MetalText>
+          </span>
           <span>Save on every order.</span>
         </h1>
         <p className="text-sm sm:text-base text-sub max-w-2xl leading-relaxed">
